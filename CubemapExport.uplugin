@@ -1,0 +1,29 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "0.0.1",
+	"FriendlyName": "CubemapExport",
+	"Description": "Adds export of Cubemaps in various formats in runtime and from editor",
+	"Category": "Rendering",
+	"CreatedBy": "Lukerrr",
+	"CreatedByURL": "https://www.youtube.com/channel/UCoij0DByuzJI3fieJl4FL9A",
+	"DocsURL": "https://github.com/Lukerrr/ue-cubemap-export",
+	"MarketplaceURL": "",
+	"SupportURL": "mailto:thelukerrr@gmail.com?subject=CubemapExport%20plugin%20support",
+	"CanContainContent": false,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": false,
+	"Installed": false,
+	"Modules": [
+		{
+			"Name": "CubemapExport",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		},
+		{
+			"Name": "CubemapExportEditor",
+			"Type": "Editor",
+			"LoadingPhase": "PostEngineInit"
+		}
+	]
+}
