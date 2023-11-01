@@ -15,10 +15,10 @@
  * Helper function to export an unwrapped 2D image of
  * the cube map ( longitude/latitude ) with specified format into the archive.
  *
+ * @param	Ar				Archive to fill with data.
  * @param	CubeTex			Cubemap texture object (either TextureCube or RenderTargetCube).
  * @param	Format			Format of output image
- * @param	Quality			Compression quality (0-100)
- * @param	Ar				Archive to fill with data.
+ * @param	Quality			Compression quality
  * @return					true on success.
  */
 template<class CubeTextureClass>
@@ -64,7 +64,43 @@ static bool WriteCubemapToArchive(FArchive& Ar, CubeTextureClass* CubeTex, EImag
 	}
 
 	// Set A to 255, because GenerateLongLatUnwrap fills alpha channel with zeros
+#if (ENGINE_MAJOR_VERSION >= 5) && (ENGINE_MINOR_VERSION >= 2)
 	FImageCore::SetAlphaOpaque(Image2D);
+#else
+	switch (Image2D.Format)
+	{
+	case ERawImageFormat::BGRA8:
+	{
+		TArrayView64<FColor> SrcColorArray = Image2D.AsBGRA8();
+
+		FColor* ColorPtr = &SrcColorArray[0];
+		FColor* EndPtr = ColorPtr + SrcColorArray.Num();
+
+		for (; ColorPtr < EndPtr; ++ColorPtr)
+		{
+			ColorPtr->A = 255;
+		}
+		break;
+	}
+	case ERawImageFormat::RGBA16F:
+	{
+		TArrayView64<FFloat16Color> SrcColorArray = Image2D.AsRGBA16F();
+
+		FFloat16Color* ColorPtr = &SrcColorArray[0];
+		FFloat16Color* EndPtr = ColorPtr + SrcColorArray.Num();
+
+		for (; ColorPtr < EndPtr; ++ColorPtr)
+		{
+			ColorPtr->A = 1.f;
+		}
+		break;
+	}
+	default:
+	{
+		break;
+	}
+	}
+#endif
 
 	TArray64<uint8> CompressedImage2D;
 	auto& ImageWrapperModule = FModuleManager::Get().LoadModuleChecked<IImageWrapperModule>(TEXT("ImageWrapper"));

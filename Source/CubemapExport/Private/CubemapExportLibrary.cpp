@@ -6,8 +6,11 @@
 
 #include "Engine/TextureCube.h"
 #include "Engine/TextureRenderTargetCube.h"
+#include "HAL/FileManager.h"
 #include "IImageWrapper.h"
 #include "ImageUtils.h"
+#include "Logging/MessageLog.h"
+#include "Misc/Paths.h"
 #include "Serialization/BufferArchive.h"
 
 static EImageFormat GetImageFormatFromFileName(const FString& FileName)
