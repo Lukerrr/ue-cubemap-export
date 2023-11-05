@@ -1,5 +1,7 @@
 # Cubemap Export
 
+**Available on the [Marketplace](https://www.unrealengine.com/marketplace/en-US/product/7b9b6aa0079d4073b909fdb11e12e60d).**
+
 Engine supports only HDR format by default when exporting cubemaps, the plugin extends formats list. Plugin provides editor tools and runtime API for exporting of cube textures and render targets to files in various formats.
 
 **Image formats supported:**
@@ -29,7 +31,7 @@ Engine supports only HDR format by default when exporting cubemaps, the plugin e
 
 ### From Marketplace
 
-1. Buy the plugin on the Marketplace page (TBD).
+1. Buy the plugin on the [Marketplace page](https://www.unrealengine.com/marketplace/en-US/product/7b9b6aa0079d4073b909fdb11e12e60d).
 2. Install the plugin to the engine using Epic Games Launcher.
 3. Open your project and enable the plugin in '_Edit->Plugins_' menu.
 
