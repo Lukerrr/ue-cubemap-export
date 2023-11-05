@@ -37,7 +37,7 @@ Engine supports only HDR format by default when exporting cubemaps, the plugin e
 
 ### From Release
 
-1. Download latest release from the GitHub page (TBD).
+1. Download latest [release](https://github.com/Lukerrr/ue-cubemap-export/releases) from the GitHub page.
 2. Unzip the release into your project's plugins directory: _%PROJECT_DIR%/Plugins_.
 3. Open your project and enable the plugin in '_Edit->Plugins_' menu.
 
