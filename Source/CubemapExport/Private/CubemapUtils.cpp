@@ -10,6 +10,7 @@
 #include "Engine/TextureRenderTarget2D.h"
 #include "IImageWrapper.h"
 #include "IImageWrapperModule.h"
+#include "Runtime/Launch/Resources/Version.h"
 
 /**
  * Helper function to export an unwrapped 2D image of
