@@ -1,4 +1,4 @@
-// Copyright (C) 2023 by Lukerrr. All Rights Reserved.
+// Copyright (C) 2023-2024 by Lukerrr. MIT License.
 
 using UnrealBuildTool;
 

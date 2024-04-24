@@ -1,15 +1,11 @@
-// Copyright (C) 2023 by Lukerrr. All Rights Reserved.
+// Copyright (C) 2023-2024 by Lukerrr. MIT License.
 
 #include "CubemapUtils.h"
 
-#include "CanvasItem.h"
-#include "CanvasTypes.h"
 #include "CubemapUnwrapUtils.h"
-#include "Engine/TextureCube.h"
-#include "Engine/TextureRenderTargetCube.h"
-#include "Engine/TextureRenderTarget2D.h"
 #include "IImageWrapper.h"
 #include "IImageWrapperModule.h"
+#include "Modules/ModuleManager.h"
 #include "Runtime/Launch/Resources/Version.h"
 
 /**
